@@ -97,4 +97,21 @@ df['revol_usage_risk'] = (df['revolUtil'] > 80).astype(int)    # 高循环额度
 ### **归类逻辑说明**
 1. **业务可解释性**：将直接影响违约的核心特征（如信用历史、负债比）单独归类  
 2. **数据性质**：区分数值型/分类型/时间型，便于后续预处理  
-3. **特征工程**：标注需要组合或衍生的字段（如fico评分取平均）  
+3. **特征工程**：标注需要组合或衍生的字段（如fico评分取平均）
+
+以上为deepseek生成，感觉很有道理，*认真学习*！  
+现在来**处理缺失值**
+首先是工龄，此项直接与工作职称和年收入相关。职称是由数字来代表的，现在确定数字大小是否与职称高低有关。  一般来说职称越高，收入越高。对两者做相关性分析，几乎没有。说明不是严格大小关系。职称类别过多，暂时对其忽略。![image](https://github.com/user-attachments/assets/14f972fa-63c0-4d4e-844e-fadd1fd017d0)
+
+发现grade与jobtitle无关
+
+![image](https://github.com/user-attachments/assets/1d207222-78f5-4fa8-be52-513476ad1db6)
+
+![image](https://github.com/user-attachments/assets/3cf7f0ec-ec70-473a-b6c0-c2bd100c355f)
+
+
+暂时忽略employlength
+
+
+
+
